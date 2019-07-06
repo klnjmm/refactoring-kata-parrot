@@ -20,8 +20,8 @@ Pour lancer les tests unitaires sous Windows :
 Il suffit ensuite après d'appuyer sur entrée dans le terminal pour exécuter de nouveau les tests.
 
 ## Solution
-La solution final est disponible sur la branche solution de ce dépôt
+La solution final est disponible sur la branche `soluce` de ce dépôt
 
 # Vidéo
 
-[Retrouver en vidéo sur youtube la réalisation de ce kata](https://youtu.be/P6XNwscr0qI)
+[Retrouver en vidéo sur youtube la réalisation de ce kata](https://youtu.be/6MmdUz0tn-o)
