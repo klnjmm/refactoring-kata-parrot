@@ -2,50 +2,14 @@
 
 namespace Klnjmm;
 
-class Parrot
+abstract class Parrot
 {
-    /** @var int ParrotTypeEnum */
-    private $type;
-    /** @var int */
-    private $numberOfCoconuts = 0;
-    /** @var double */
-    private $voltage;
-    /** @var boolean */
-    private $isNailed;
+    const BASE_SPEED = 12.0;
 
-    public function __construct($type, $numberOfCoconuts, $voltage, $isNailed)
-    {
-        $this->type = $type;
-        $this->numberOfCoconuts = $numberOfCoconuts;
-        $this->voltage = $voltage;
-        $this->isNailed = $isNailed;
-    }
+    abstract public function getSpeed();
 
-    public function getSpeed()
+    protected function getBaseSpeed()
     {
-        switch ($this->type) {
-            case ParrotTypeEnum::EUROPEAN:
-                return $this->getBaseSpeed();
-            case ParrotTypeEnum::AFRICAN:
-                return max(0, $this->getBaseSpeed() - $this->getLoadFactor() * $this->numberOfCoconuts);
-            case ParrotTypeEnum::NORWEGIAN_BLUE:
-                return $this->isNailed ? 0 : $this->getBaseSpeedWith($this->voltage);
-        }
-        throw new \Exception("Should be unreachable");
-    }
-
-    private function getBaseSpeedWith($voltage)
-    {
-        return min(24.0, $voltage * $this->getBaseSpeed());
-    }
-
-    private function getLoadFactor()
-    {
-        return 9.0;
-    }
-
-    private function getBaseSpeed()
-    {
-        return 12.0;
+        return self::BASE_SPEED;
     }
 }
